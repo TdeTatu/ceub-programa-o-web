@@ -1,20 +1,23 @@
-console.log("Hello World")
+let idade = 17;
+let name = "joao";
 
-let teste = 1.1;
-let variavelString = "Olá mundo!";
-let aceitoCookies = false;
 
-const PI= 3.14;
+if (idade >= 18 ) {
 
-console.log(teste)
-console.log(variavelString)
+    console.log("User pode entrar no sistema")
 
-aceitoCookies = true;
+} else {
 
-teste = "abc";
+console.log("User não pode entrar no sistema")
 
-console.log(typeof(teste))
+}
 
-console.log(typeof(aceitoCookies))
+if (name = "joao") {
+    console.log("Ola juanito")
+} else {
+    console.log("SAAAAAAI DAQUI")
+}
 
-console.log(5+5)
+function nomeFuncao () {
+    
+}
