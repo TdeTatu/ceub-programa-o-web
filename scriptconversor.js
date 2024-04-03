@@ -1,22 +1,42 @@
-const valorConversao = {
+const valoresConversao = {
     real: {
         euro: 0.19,
-        dólar: 0.20
+        dolar: 0.20,
+        simbolo: "R$"
     },
-    dólar: {
+    dolar: {
         real: 4.99,
-        euro: 0.92
+        euro: 0.92,
+        simbolo: "US$"
     },
     euro: {
         real: 5.40,
-        dólar: 1.08
+        dolar: 1.08,
+        simbolo: "EU"
     }
 }
 
+const botaoInverter = document.getElementById("botao-inverter");
+botaoInverter.addEventListener("click", inverter);
+
+const botaoConverter = document.getElementById("botao-converter");
+botaoConverter.addEventListener("click", converter);
+
+const botaoLimpar = document.getElementById("botao-limpar");
+botaoLimpar.addEventListener("click", limpar);
+
+//console.log(valoresConversao['real']['euro']);
+
 function converter() {
+    let valorUsuario = document.getElementById("valorEntrada").value;
 
-    let valorUsuário = document.getElementById("valorEntrada").value;
+    console.log(valorUsuario);
 
+    if(valorUsuario <= 0 || valorUsuario == "") {
+        alert("Verificar valor");
+        return;
+    }
+    
     let moeda1 = document.getElementById("moeda1").value;
     let moeda2 = document.getElementById("moeda2").value;
 
@@ -25,21 +45,26 @@ function converter() {
         return;
     }
 
-    let resultado = valorUsuário * valorConversao[moeda1][moeda2];
+    let simbolo = valoresConversao[moeda2]["simbolo"];
+    //console.log(simbolo);
+
+    let resultado = valorUsuario * valoresConversao[moeda1][moeda2];
     
+    console.log(resultado);
+
     let paragrafoResultado = document.getElementById("resultado");
-    paragrafoResultado.textContent = resultado;
+    paragrafoResultado.textContent = simbolo + " " + resultado.toFixed(2);
 }
 
 function limpar() {
-    let paragrafoResultado = document.getElementById("resultado")
+    let paragrafoResultado = document.getElementById("resultado");
     paragrafoResultado.textContent = "";
 
     let valorEntrada = document.getElementById("valorEntrada");
     valorEntrada.value = "";
 }
 
-function inverter(){
+function inverter() {
     let valorMoeda1 = document.getElementById("moeda1").value;
     let valorMoeda2 = document.getElementById("moeda2").value;
 
