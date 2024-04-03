@@ -30,9 +30,9 @@ valorUsuario.addEventListener("keypress", function(event) {
     if (event.key == "Enter") {
         converter();
     }
-}
+})
 
-,function converter() {
+function converter() {
     let valorUsuario = document.getElementById("valorEntrada").value;
 
     console.log(valorUsuario);
@@ -44,6 +44,8 @@ valorUsuario.addEventListener("keypress", function(event) {
     
     let moeda1 = document.getElementById("moeda1").value;
     let moeda2 = document.getElementById("moeda2").value;
+
+    console.log(moeda2);
 
     if(moeda1 == moeda2) {
         alert("As moedas são iguais!!!");
@@ -61,7 +63,7 @@ valorUsuario.addEventListener("keypress", function(event) {
     paragrafoResultado.textContent = simbolo + " " + resultado.toFixed(2);
 }
 
-,function limpar() {
+function limpar() {
     let paragrafoResultado = document.getElementById("resultado");
     paragrafoResultado.textContent = "";
 
@@ -69,10 +71,10 @@ valorUsuario.addEventListener("keypress", function(event) {
     valorEntrada.value = "";
 }
 
-,function inverter() {
+function inverter() {
     let valorMoeda1 = document.getElementById("moeda1").value;
     let valorMoeda2 = document.getElementById("moeda2").value;
 
     document.getElementById("moeda1").value = valorMoeda2;
     document.getElementById("moeda2").value = valorMoeda1;
-})
+}
