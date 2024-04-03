@@ -25,9 +25,14 @@ botaoConverter.addEventListener("click", converter);
 const botaoLimpar = document.getElementById("botao-limpar");
 botaoLimpar.addEventListener("click", limpar);
 
-//console.log(valoresConversao['real']['euro']);
+let valorUsuario = document.getElementById("valorEntrada");
+valorUsuario.addEventListener("keypress", function(event) {
+    if (event.key == "Enter") {
+        converter();
+    }
+}
 
-function converter() {
+,function converter() {
     let valorUsuario = document.getElementById("valorEntrada").value;
 
     console.log(valorUsuario);
@@ -56,7 +61,7 @@ function converter() {
     paragrafoResultado.textContent = simbolo + " " + resultado.toFixed(2);
 }
 
-function limpar() {
+,function limpar() {
     let paragrafoResultado = document.getElementById("resultado");
     paragrafoResultado.textContent = "";
 
@@ -64,10 +69,10 @@ function limpar() {
     valorEntrada.value = "";
 }
 
-function inverter() {
+,function inverter() {
     let valorMoeda1 = document.getElementById("moeda1").value;
     let valorMoeda2 = document.getElementById("moeda2").value;
 
     document.getElementById("moeda1").value = valorMoeda2;
     document.getElementById("moeda2").value = valorMoeda1;
-}
+})
